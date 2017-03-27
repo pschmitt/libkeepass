@@ -1,6 +1,6 @@
-**this library is not under active development anymore.**
+**this library is not under active development currently.**
 
-If you find the code useful or find a problem, please fork the repository to apply your changes!
+Pull requests are being accepted though :)
 
 
 libkeepass
