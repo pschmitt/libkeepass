@@ -22,7 +22,7 @@ KeePass 1.x support
 -------------------
 
 Currently the v3 reader only goes so far, as outputting the raw decrypted data.
-Parsing into groups and entries is missing, but probably just needs to be 
+Parsing into groups and entries is missing, but probably just needs to be
 integrated from Brett Viren's work.
 
 Only passwords are supported.
@@ -51,26 +51,26 @@ Examples
 --------
 
     import keepass
-    
+
     filename = "input.kdbx"
     with keepass.open(filename, password='secret', keyfile='putty.exe') as kdb:
         # print parsed element tree as xml
         print kdb.pretty_print()
-        
+
         # re-encrypt the password fields
         kdb.protect()
         print kdb.pretty_print()
-        
+
         # or use kdb.obj_root to access the element tree
         kdb.obj_root.findall('.//Entry')
-        
+
         # change the master password before writing
         kdb.clear_credentials()
         kdb.add_credentials(password="m04r_s3cr37")
-        
+
         # disable compression
         kdb.set_compression(0)
-        
+
         # write to a new file
         with open('output', 'wb') as output:
             kdb.write_to(output)
